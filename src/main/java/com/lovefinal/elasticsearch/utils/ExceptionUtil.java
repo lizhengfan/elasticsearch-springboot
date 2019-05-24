@@ -8,6 +8,7 @@ public class ExceptionUtil extends RuntimeException {
     Integer httpCode;
     ErrorEnum errorEnum;
 
+
     public ExceptionUtil(ErrorEnum errorEnum,Integer httpCode) {
         this.errorEnum = errorEnum;
         this.httpCode=httpCode;
@@ -17,5 +18,11 @@ public class ExceptionUtil extends RuntimeException {
         super(message);
         this.errorEnum = errorEnum;
         this.httpCode=httpCode;
+    }
+
+    public ExceptionUtil(String message, Throwable cause, Integer httpCode, ErrorEnum errorEnum) {
+        super(message, cause);
+        this.httpCode = httpCode;
+        this.errorEnum = errorEnum;
     }
 }

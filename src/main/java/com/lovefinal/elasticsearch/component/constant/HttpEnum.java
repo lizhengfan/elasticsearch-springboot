@@ -1,7 +1,5 @@
 package com.lovefinal.elasticsearch.component.constant;
 
-import io.swagger.models.auth.In;
-
 public enum HttpEnum {
     SUCCESS(200),
     PATHERROR(404),

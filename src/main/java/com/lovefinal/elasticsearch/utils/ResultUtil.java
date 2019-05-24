@@ -1,5 +1,6 @@
 package com.lovefinal.elasticsearch.utils;
 
+import com.lovefinal.elasticsearch.component.constant.ErrorEnum;
 import com.lovefinal.elasticsearch.component.constant.HttpEnum;
 import com.lovefinal.elasticsearch.component.dto.ResultDTO;
 
@@ -19,12 +20,13 @@ public class ResultUtil {
 
         ResultDTO<Object> resultDTO=null;
         if(exception==null){
-            resultDTO=new ResultDTO<Object>(HttpEnum.SUCCESS.getCode(),null,null,data);
+            resultDTO=new ResultDTO<Object>(HttpEnum.SUCCESS.getCode(), ErrorEnum.SUCCESS.getValue(),ErrorEnum.SUCCESS.getKey(),data);
         }else{
             int code=exception.httpCode;
             String message=exception.errorEnum.getValue();
             String status=exception.errorEnum.getKey();
-            resultDTO=new ResultDTO<Object>(code,message,status,null);
+            StackTraceElement[] stackElements = exception.getStackTrace();
+            resultDTO=new ResultDTO<Object>(code,message,status,stackElements);
         }
 
         return  resultDTO;

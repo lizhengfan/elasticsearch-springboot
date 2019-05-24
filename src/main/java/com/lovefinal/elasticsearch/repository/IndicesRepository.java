@@ -1,4 +1,4 @@
-package com.lovefinal.elasticsearch.Repository;
+package com.lovefinal.elasticsearch.repository;
 
 import com.lovefinal.elasticsearch.entity.Indices;
 import org.springframework.data.jpa.repository.JpaRepository;

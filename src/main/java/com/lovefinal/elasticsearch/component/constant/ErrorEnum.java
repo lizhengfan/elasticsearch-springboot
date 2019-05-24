@@ -2,7 +2,9 @@ package com.lovefinal.elasticsearch.component.constant;
 
 public enum ErrorEnum {
     SUCCESS("10000", "操作成功"),
-    FAILURE("10001", "操作失败");
+    CREATEINDICESERROR("10001", "创建索引异常"),
+    CREATEDOCUMENTERROR("10002", "创建文档异常"),
+    FAILURE("99999", "操作失败");
 
     private final String key;
     private final String value;
