@@ -11,4 +11,4 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 elasticsearch:
-  host: {"139.159.247.209":9200}
+  host: {"127.0.0.1":9200}
